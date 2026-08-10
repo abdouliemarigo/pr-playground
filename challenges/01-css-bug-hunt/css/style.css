@@ -1,0 +1,30 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #fafafa;
+}
+
+.site-header {
+  background-color: #0b3d91;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+main { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+.cards { display: flex; gap: 20px; flex-wrap: wrap; }
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1;
+  min-width: 220px;
+  box-shaddow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card h3 { color: #0b3d91; margin-bottom: 8px; }
