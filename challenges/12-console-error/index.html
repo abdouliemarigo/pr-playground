@@ -3,34 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Challenge 03: Missing Footer</title>
+  <title>Challenge 12: Console Error</title>
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       background: #f7f3fb;
       color: #2a1a3a;
-      min-height: 100vh;
     }
-    header {
+    .hero {
       background: #652d90;
       color: #fff;
-      padding: 30px;
+      padding: 80px 20px;
       text-align: center;
+      min-height: 200px;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: 2rem;
     }
     main {
       max-width: 700px;
       margin: 40px auto;
       padding: 0 20px;
     }
-    /* No footer styling exists yet, that's part of the task */
   </style>
 </head>
 <body>
-  <header><h1>Integify</h1></header>
+  <div class="hero">
+    <h1 class="title"></h1>
+  </div>
   <main>
-    <p>This page is missing a footer. Build one from scratch.</p>
+    <p>If the hero title is empty, check the console and fix the script.</p>
   </main>
-  <!-- Add your footer below this line -->
+  <script src="js/app.js"></script>
 </body>
 </html>

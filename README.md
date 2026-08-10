@@ -26,6 +26,14 @@ AI agents can write code. What's still worth testing in a junior candidate is wh
 | 02 | [Typo Fix](challenges/02-typo-fix) | HTML, content editing | Beginner |
 | 03 | [Missing Footer](challenges/03-missing-footer) | HTML/CSS, building from scratch | Beginner |
 | 04 | [Broken Button](challenges/04-broken-button) | Basic JavaScript, debugging | Beginner+ |
+| 05 | [Broken Image](challenges/05-broken-image) | HTML, file paths | Beginner |
+| 06 | [Responsive Cards](challenges/06-responsive-cards) | CSS layout, mobile checking | Beginner+ |
+| 07 | [Broken Form](challenges/07-broken-form) | HTML forms | Beginner+ |
+| 08 | [Missing Alt Text](challenges/08-missing-alt) | Accessibility (a11y) | Beginner |
+| 09 | [Broken Link](challenges/09-broken-link) | HTML links, verifying navigation | Beginner |
+| 10 | [Color Contrast](challenges/10-color-contrast) | Accessibility, CSS color | Intermediate |
+| 11 | [Update the Docs](challenges/11-update-the-docs) | Documentation PRs | Beginner |
+| 12 | [Console Error](challenges/12-console-error) | JavaScript, browser console | Beginner+ |
 
 More challenges get added over time, this repo is meant to grow.
 

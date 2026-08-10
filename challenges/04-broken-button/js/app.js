@@ -1,4 +1,4 @@
-const button = document.getElementById("clickButton"); // bug: wrong id
+const button = document.getElementById("clickButton");
 const message = document.getElementById("message");
 
 let count = 0;

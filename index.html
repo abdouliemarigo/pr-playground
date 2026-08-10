@@ -5,63 +5,292 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PR Playground — Integify</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, Arial, sans-serif; background: #0b0f1a; color: #eee; line-height: 1.6; }
-    header { text-align: center; padding: 80px 20px 40px; }
-    header h1 { font-size: 2.5rem; color: #fff; }
-    header p { color: #9aa5b1; margin-top: 12px; font-size: 1.1rem; }
-    main { max-width: 800px; margin: 0 auto; padding: 20px; }
-    .challenge {
-      background: #151b2b;
-      border: 1px solid #2a3347;
-      border-radius: 10px;
-      padding: 24px;
-      margin-bottom: 20px;
+    :root {
+      --brand: #652d90;
+      --bg: #652d90;
+      --surface: #fff;
+      --text: #fff;
+      --muted: #4a4a4a;
+      --body: #333;
     }
-    .challenge h2 { color: #6ea8fe; font-size: 1.2rem; }
-    .challenge p { color: #c4cbd6; margin-top: 8px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 72px 20px 24px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #fff;
+    }
+    .how {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 28px;
+      color: #fff;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .challenge {
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid #e2d8ea;
+      border-radius: 10px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease;
+      min-height: 100%;
+    }
+    .challenge:hover {
+      border-color: #652d90;
+    }
+    .challenge-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .challenge h2 {
+      color: #652d90;
+      font-size: 1.05rem;
+      line-height: 1.3;
+    }
+    .challenge-open {
+      color: #652d90;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .challenge p {
+      color: var(--body);
+      margin-top: 10px;
+      font-size: 0.9rem;
+      flex: 1;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
     .tag {
       display: inline-block;
-      font-size: 0.75rem;
-      background: #2a3347;
-      color: #9aa5b1;
-      padding: 3px 10px;
+      font-size: 0.7rem;
+      background: var(--brand);
+      color: #fff;
+      border: 1px solid var(--brand);
+      padding: 3px 8px;
       border-radius: 20px;
-      margin-top: 10px;
     }
-    footer { text-align: center; padding: 40px 20px; color: #6b7280; font-size: 0.9rem; }
-    a { color: #6ea8fe; }
+    .tag.skill {
+      background: transparent;
+      color: #652d90;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 40px 24px;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .find-repo {
+      color: #fff;
+      text-decoration: none;
+    }
+    .find-repo:hover { text-decoration: underline; }
+    .powered-by {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 300;
+      text-decoration: none;
+    }
+    .powered-by .logo {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+    a { color: #652d90; }
+    @media (max-width: 1000px) {
+      main { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      main { grid-template-columns: 1fr; }
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .powered-by { align-self: flex-end; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>PR Playground</h1>
-    <p>Small challenges. Real GitHub workflow. Built by Integify.</p>
   </header>
+  <p class="how">
+    Preview a challenge below, then fork the repo, fix it on a branch, and open a PR.
+  </p>
   <main>
-    <div class="challenge">
-      <h2>01 · CSS Bug Hunt</h2>
-      <p>Find and fix a CSS bug hiding in plain sight.</p>
-      <span class="tag">Beginner</span>
-    </div>
-    <div class="challenge">
-      <h2>02 · Typo Fix</h2>
-      <p>Careful reading, careful editing. Fix the mistakes.</p>
-      <span class="tag">Beginner</span>
-    </div>
-    <div class="challenge">
-      <h2>03 · Missing Footer</h2>
-      <p>Build something from scratch, not just fix what's broken.</p>
-      <span class="tag">Beginner</span>
-    </div>
-    <div class="challenge">
-      <h2>04 · Broken Button</h2>
-      <p>Open the console, find the bug, fix the JavaScript.</p>
-      <span class="tag">Beginner+</span>
-    </div>
+    <a class="challenge" href="challenges/01-css-bug-hunt/index.html">
+      <div class="challenge-top">
+        <h2>01 · CSS Bug Hunt</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>The cards should cast a subtle shadow, but they don't. Find the CSS bug and fix it.</p>
+      <div class="tags">
+        <span class="tag">Beginner</span>
+        <span class="tag skill">CSS</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/02-typo-fix/index.html">
+      <div class="challenge-top">
+        <h2>02 · Typo Fix</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>The About page has several spelling mistakes. Find them all without changing the meaning.</p>
+      <div class="tags">
+        <span class="tag">Beginner</span>
+        <span class="tag skill">HTML</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/03-missing-footer/index.html">
+      <div class="challenge-top">
+        <h2>03 · Missing Footer</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>This page has no footer. Build one from scratch with your name, the year, and a short credit line.</p>
+      <div class="tags">
+        <span class="tag">Beginner</span>
+        <span class="tag skill">HTML / CSS</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/04-broken-button/index.html">
+      <div class="challenge-top">
+        <h2>04 · Broken Button</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>Clicking the button does nothing. Open the console, find the JavaScript error, and fix it.</p>
+      <div class="tags">
+        <span class="tag">Beginner+</span>
+        <span class="tag skill">JavaScript</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/05-broken-image/index.html">
+      <div class="challenge-top">
+        <h2>05 · Broken Image</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>The logo should show, but the image is broken. Fix the file path.</p>
+      <div class="tags">
+        <span class="tag">Beginner</span>
+        <span class="tag skill">HTML</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/06-responsive-cards/index.html">
+      <div class="challenge-top">
+        <h2>06 · Responsive Cards</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>On a phone-sized screen the cards overflow. Fix the CSS so they stack cleanly.</p>
+      <div class="tags">
+        <span class="tag">Beginner+</span>
+        <span class="tag skill">CSS</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/07-broken-form/index.html">
+      <div class="challenge-top">
+        <h2>07 · Broken Form</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>Send does nothing useful. Fix the form so it reaches the thanks page.</p>
+      <div class="tags">
+        <span class="tag">Beginner+</span>
+        <span class="tag skill">HTML</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/08-missing-alt/index.html">
+      <div class="challenge-top">
+        <h2>08 · Missing Alt Text</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>The logo has empty alt text. Add meaningful alternative text for accessibility.</p>
+      <div class="tags">
+        <span class="tag">Beginner</span>
+        <span class="tag skill">A11y</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/09-broken-link/index.html">
+      <div class="challenge-top">
+        <h2>09 · Broken Link</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>Contact in the nav should jump to the Contact section. Fix the href.</p>
+      <div class="tags">
+        <span class="tag">Beginner</span>
+        <span class="tag skill">HTML</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/10-color-contrast/index.html">
+      <div class="challenge-top">
+        <h2>10 · Color Contrast</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>Body text is too light to read. Improve the contrast without losing the brand feel.</p>
+      <div class="tags">
+        <span class="tag">Intermediate</span>
+        <span class="tag skill">A11y / CSS</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/11-update-the-docs/index.html">
+      <div class="challenge-top">
+        <h2>11 · Update the Docs</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>SERVICES.md is out of date. Make the docs match the three services on the page.</p>
+      <div class="tags">
+        <span class="tag">Beginner</span>
+        <span class="tag skill">Docs</span>
+      </div>
+    </a>
+    <a class="challenge" href="challenges/12-console-error/index.html">
+      <div class="challenge-top">
+        <h2>12 · Console Error</h2>
+        <span class="challenge-open">Preview →</span>
+      </div>
+      <p>The hero title stays blank. Open the console, find the error, and fix the script.</p>
+      <div class="tags">
+        <span class="tag">Beginner+</span>
+        <span class="tag skill">JavaScript</span>
+      </div>
+    </a>
   </main>
   <footer>
-    Fork the repo on <a href="https://github.com/integify/pr-playground">GitHub</a> to get started.
+    <a class="find-repo" href="https://github.com/integify/pr-playground" target="_blank" rel="noopener noreferrer">Find the repo</a>
+    <a class="powered-by" href="https://www.integify.io" target="_blank" rel="noopener noreferrer">
+      Powered by
+      <img class="logo" src="integify_logo.png" alt="Integify">
+    </a>
   </footer>
 </body>
 </html>
